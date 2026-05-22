@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="concurso">
+    <xs:complexType>
+        <xs:sequence>
+<xs:element name="ganador">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="datosjugador">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="alias">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:maxLength value="15"></xs:maxLength>
+                                    <xs:minLength value="3"></xs:minLength>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="nombre" type="xs:string"></xs:element>
+                        <xs:element name="apellidos" type="xs:string"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="edad">
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger">
+                        <xs:maxInclusive value="65"></xs:maxInclusive>
+                        <xs:minInclusive value="16"></xs:minInclusive>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="provincia">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                       <xs:enumeration value="Murcia"></xs:enumeration>
+                       <xs:enumeration value="Almeria"></xs:enumeration>
+                       <xs:enumeration value="Alicante"></xs:enumeration>
+                       <xs:enumeration value="Albacete"></xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="consola">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                       <xs:enumeration value="Nintendo DS"></xs:enumeration>
+                       <xs:enumeration value="PSP"></xs:enumeration>
+                       <xs:enumeration value="Wii"></xs:enumeration>
+                       <xs:enumeration value="PC"></xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="juego">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{3}-([A-Za-z0-9]|)+"></xs:pattern>
+                        <xs:maxLength value="30"></xs:maxLength>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+                    <xs:attribute name="categoria" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Deportes"></xs:enumeration>
+                        <xs:enumeration value="Carreras"></xs:enumeration>
+                        <xs:enumeration value="Lucha"></xs:enumeration>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+    </xs:complexType>
+</xs:element>
+<xs:element name="patrocinador" minOccurs="0">
+<xs:complexType>
+    <xs:sequence>
+        <xs:element name="nombre" type="xs:string"></xs:element>
+        <xs:element name="eslogan">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="100"></xs:maxLength>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+    </xs:sequence>
+    <xs:attribute name="tipo">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="principal | asociado"></xs:pattern>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

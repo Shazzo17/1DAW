@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<franquicia nombre="">
+    <director></director>
+    <añofundacion></añofundacion>
+    <establecimientos>
+        <establecimiento codigo="">
+            <direccion poblacion=""></direccion>
+            
+        </establecimiento>
+    </establecimientos>
+</franquicia>

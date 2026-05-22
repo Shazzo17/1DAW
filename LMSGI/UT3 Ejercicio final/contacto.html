@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Dinos tu Rol</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+    <header id="cabecera-principal">
+        <h1>Formulario de Contacto del Invocador</h1>
+    </header>
+    
+    <nav id="menu-principal">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="campeones.html">Campeones y Roles</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <main id="contenido-formulario">
+        <section class="formulario-seccion">
+            <h2>Únete a la Comunidad</h2>
+            
+            <form action="procesar_datos.html" method="post" class="form-lol">
+                
+                <fieldset> <!-- Agrupación de controles -->
+                    <legend>Datos de Invocador</legend>
+                    
+                    <div>
+                        <label for="nombre">Nombre de Invocador (Alias):</label> <!-- Uso de label con for para asociar al input -->
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Invocador123">
+                    </div>
+
+                    <div>
+                        <label for="clave">Contraseña Secreta (Mid-Key):</label>
+                        <input type="password" id="clave" name="clave" required> <!-- Cuadro de contraseñas -->
+                    </div>
+
+                    <div>
+                        <label for="servidor">Servidor Principal:</label>
+                        <select id="servidor" name="servidor"> <!-- Lista de selección -->
+                            <option value="euw" selected>EU West</option>
+                            <option value="eune">EU Nordic & East</option>
+                            <option value="na">North America</option>
+                            <option value="las">Latam Sur</option>
+                        </select>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Rol Preferido en la Grieta</legend>
+                    <p>Selecciona tu posición favorita (solo una):</p>
+                    
+                    <label>
+                        <input type="radio" name="rol" value="top"> Top Laner
+                    </label><br>
+                    <label>
+                        <input type="radio" name="rol" value="jungla"> Jungla
+                    </label><br>
+                    <label>
+                        <input type="radio" name="rol" value="mid" checked> Mid Laner
+                    </label><br>
+                    <!-- Botones de tipo radio -->
+                </fieldset>
+
+                <div class="submit-container">
+                    <input type="submit" value="Enviar Datos de Invocación"> <!-- Botón de envío -->
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2031 IES Alcántara. UT3: Contacto.</p>
+    </footer>
+</body>
+</html>

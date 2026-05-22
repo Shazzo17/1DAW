@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dou.xsd">
+  <ficha categoria="particular" zona="Ronda Norte">
+    <nombre>Pepe Antonio</nombre>
+    <apellido1>Ruiz</apellido1>
+    <apellido2>Manzano</apellido2>
+    <tel_nacionales>
+      <tel_nacional>666777666</tel_nacional>
+      <tel_nacional>968777666</tel_nacional>
+    </tel_nacionales>
+    <tel_internacionales>
+      <tel_internacional>+33 140633960</tel_internacional>
+      <tel_internacional>+38 566784333</tel_internacional>
+    </tel_internacionales>
+    <dir_emails>
+      <email>pepe@pepe.com</email>
+      <email>pmanzano@pepe.com</email>            
+    </dir_emails>
+    <direcciones_postal>
+      <direccion CP="30880">
+        <calle>Nueva</calle>
+        <num>4</num>
+        <piso letra="R">3</piso>
+        <ciudad>Alcantarilla</ciudad>
+        <pais>España</pais>        
+      </direccion>
+    </direcciones_postal>
+  </ficha>
+</agenda>

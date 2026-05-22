@@ -1,0 +1,75 @@
+-- 1. CREACION DE LA BASE DE DATOS Y EL USUARIO
+
+-- Primero se creo el usuario y le asigno los permisos sobre la  base de datos ('tiendaOnline') que se creara posteriormente
+
+CREATE USER "shazzo" IDENTIFIED BY "1234";
+GRANT ALL PRIVILEGES ON tienda.* TO "shazzo";
+FLUSH PRIVILEGES;
+exit;
+
+-- Abro sesión en MySQL con el nuevo usuario
+
+mysql -u shazzo -p;
+
+-- Ahora creo la base de datos 'tiendaOnline'
+
+CREATE DATABASE tienda;
+USE tienda;
+SHOW WARNINGS;
+
+-- Primero creo las tablas que no tienen FKs
+
+CREATE TABLE gamas (
+codigo VARCHAR(3),
+descripcion VARCHAR(50),
+CONSTRAINT pk_gamas PRIMARY KEY (codigo)
+) engine=innodb;
+
+CREATE TABLE facturas (
+codigo VARCHAR(6),
+fecha_emision DATE DEFAULT(CURRENT_DATE),
+fecha_pago DATE,
+CONSTRAINT pk_facturas PRIMARY KEY (codigo)
+) engine=innodb;
+
+CREATE TABLE clientes (
+dni CHAR(9),
+nombre VARCHAR(100) CHECK (nombre=UPPER(nombre)),
+direccion VARCHAR(160),
+telefono CHAR(9) UNIQUE,
+t_credito CHAR(20) UNIQUE CHECK (t_credito=LOWER(t_credito)),
+CONSTRAINT pk_clientes PRIMARY KEY (dni)
+) engine=innodb;
+
+CREATE TABLE repartidores (
+nss CHAR(6),
+nombre VARCHAR(70),
+telefono CHAR(9) UNIQUE,
+f_alta DATE,
+matricula CHAR(7) UNIQUE,
+tipo SET("temporal", "fijo") DEFAULT("fijo"),
+CONSTRAINT pk_repartidores PRIMARY KEY (nss)
+) engine=innodb;
+
+-- Ahora creo las tablas que sí tienen FKs
+
+-- OJO: si el campo FK es NOT NULL no se puende poner ON DELETE/ON UPDATE SET NULL
+
+CREATE TABLE invita (
+cliente_invitado CHAR(9),
+cliente CHAR(9),
+CONSTRAINT pk_invita PRIMARY KEY (cliente_invitado),
+CONSTRAINT fk_invitado_clientes FOREIGN KEY (cliente_invitado) REFERENCES clientes(dni) ON DELETE RESTRICT ON UPDATE RESTRICT, -- no deja ni borrar ni modificar un cliente que esté invitado
+CONSTRAINT fk_invita_clientes FOREIGN KEY (cliente) REFERENCES clientes(dni) ON DELETE RESTRICT ON UPDATE RESTRICT -- no deja ni borrar ni modificar un cliente que haya invitado a otro
+) engine=innodb;
+
+CREATE TABLE compra (
+carrito VARCHAR(5),
+cliente CHAR(9) NOT NULL,
+factura VARCHAR(6) NOT NULL,
+estrellas TINYINT UNSIGNED DEFAULT 5 CHECK (estrellas BETWEEN 1 AND 5),
+CONSTRAINT pk_compra PRIMARY KEY (carrito),
+CONSTRAINT fk_compra_carrito FOREIGN KEY (carrito) REFERENCES carrito(codigo) ON DELETE RESTRICT ON UPDATE RESTRICT, --  no deja ni borrar ni modificar un carrito que este en una compra
+CONSTRAINT fk_compra_clientes FOREIGN KEY (cliente) REFERENCES clientes(dni) ON DELETE RESTRICT ON UPDATE RESTRICT, -- no deja ni borrar ni modificar un cliente que este en una compra
+CONSTRAINT fk_compra_factura FOREIGN KEY (factura) REFERENCES factura(codigo) ON DELETE RESTRICT UPDATE ON CASCADE RESTRICT -- no deja ni borrar ni modificar una factura que este en una compra
+) engine=innodb;

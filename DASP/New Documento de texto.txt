@@ -1,0 +1,17 @@
+Señala a qué tipo de digitalización, de las mencionadas en el apartado, se refieren estos ejemplos de actividades desarrolladas por las empresas: 
+
+a) Una empresa envía una felicitación de cumpleaños a sus clientes. 
+
+b) Una tienda online utiliza herramientas digitales para saber cuántas personas visitan su página, qué productos ven y durante cuánto tiempo, qué colores y tallas seleccionan, y cada cuánto tiempo compran. 
+
+c) Una compañía tiene domiciliado el pago a sus proveedores. 
+
+d) Las facturas de una empresa son escaneadas y almacenadas en la nube. 
+
+e) Una compañía puede realizar un pedido a sus proveedores por email o chat, en lugar de usar un fax o una llamada telefónica. 
+
+f) Una empresa realiza los pedidos por WhatsApp y recibe la factura por email. 
+
+g) Un supermercado permite a sus clientes realizar la compra desde su web.
+
+h) En una fábrica de productos congelados, un termostato inteligente permite ajustar la temperatura de la fábrica según la temperatura exterior, evitando el deterioro de sus productos por un exceso de calor

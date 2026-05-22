@@ -1,0 +1,9 @@
+<!ELEMENT libros (libro)+>
+<!ELEMENT libro (titulo,editorial+,edicion+,numerop,autor+)>
+<!ATTLIST libro codigo ID #REQUIRED>
+<!ELEMENT titulo(#PCDATA)>
+<!ELEMENT editorial(#PCDATA)>
+<!ELEMENT numerop(#PCDATA)>
+<!ELEMENT autor(#PCDATA)>
+<!ELEMENT edicion>
+<!ATTLIST edicion ISBN ID #REQUIRED>

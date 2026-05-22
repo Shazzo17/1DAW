@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Define un documento XML que permita representar las cuentas de los clientes de un banco. Para cada de una de las cuentas se deben almacenar los siguientes datos:
+Número de cuenta
+Número de sucursal
+Titulares de la cuenta: para cada titular se debe registrar el NIF, el nombre y los apellidos
+Saldo de la cuenta
+Operaciones realizadas en la cuenta: para cada operación se debe registrar el tipo de operación (cargo o abono), el importe y la fecha.
+-->
+
+<banco>
+    <cuentas>
+        <cuenta ncuenta="" nsucursal="">
+        <titulares>
+            <titular nif="">
+                <nombre></nombre>
+                <apellidos>
+                    <apellido1></apellido1>
+                    <apellido2></apellido2>
+                </apellidos>
+            </titular>
+        </titulares>
+        <saldo moneda=""></saldo>
+        <operaciones>
+            <operacion tipo="">
+                <importe moneda=""></importe>
+                <fecha>
+                    <dia></dia>
+                    <mes></mes>
+                    <anyo></anyo>
+                </fecha>
+            </operacion>
+        </operaciones>
+        </cuenta>
+    </cuentas>
+</banco>

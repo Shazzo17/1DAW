@@ -1,0 +1,9 @@
+SET SERVEROUTPUT ON
+DECLARE
+nombre VARCHAR2(100);
+BEGIN
+	nombre:=&DIME_TU_NOMBRE;
+	
+	DBMS_OUTPUT.PUT_LINE('Hola,'|| nombre);
+END;
+/

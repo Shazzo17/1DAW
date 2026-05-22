@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transformacion.xsl"?>
+<agencia_espacial>
+    <mision id="M-202" estado="Completada">
+        <nombre>James Webb</nombre>
+        <destino>Punto Lagrange L2</destino>
+        <anyo>2021</anyo>
+        <presupuesto unidad="M€">10000</presupuesto>
+    </mision>
+    <mision id="M-408" estado="En curso">
+        <nombre>Europa Clipper</nombre>
+        <destino>Europa (Júpiter)</destino>
+        <anyo>2024</anyo>
+        <presupuesto unidad="M€">4200</presupuesto>
+    </mision>
+    <mision id="M-101" estado="En curso">
+        <nombre>Artemis III</nombre>
+        <destino>Luna</destino>
+        <anyo>2025</anyo>
+        <presupuesto unidad="M€">500</presupuesto>
+    </mision>
+    <mision id="M-305" estado="Planificada">
+        <nombre>Mars One</nombre>
+        <destino>Marte</destino>
+        <anyo>2030</anyo>
+        <presupuesto unidad="M€">2500</presupuesto>
+    </mision>
+</agencia_espacial>

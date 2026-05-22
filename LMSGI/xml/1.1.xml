@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Define un documento XML para representar datos de hoteles, donde tengas nombre, teléfono, dirección(calle y número), ciudad, país, número de estrellas, descripción del hotel, número de habitaciones individuales, habitaciones dobles, habitaciones triples y suites. Escribe un documento con la información de al menos 2 hoteles.
+ -->
+<hoteles>
+    <hotel estrellas="">
+        <nombre></nombre>
+        <telefono></telefono>
+        <direccion>
+            <calle></calle>
+            <numero></numero>
+        </direccion>
+        <ciudad pais=""></ciudad>
+        <descripcion></descripcion>
+        <habitaciones>
+            <individuales></individuales>
+            <dobles></dobles>
+            <triples></triples>
+            <suites></suites>
+        </habitaciones>
+    </hotel>
+    <hotel estrellas="">
+        <nombre></nombre>
+        <telefono></telefono>
+        <direccion>
+            <calle></calle>
+            <numero></numero>
+        </direccion>
+        <ciudad pais=""></ciudad>
+        <descripcion></descripcion>
+        <habitaciones>
+            <individuales></individuales>
+            <dobles></dobles>
+            <triples></triples>
+            <suites></suites>
+        </habitaciones>
+    </hotel>
+</hoteles>

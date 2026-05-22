@@ -1,0 +1,8 @@
+SET SERVEROUTPUT ON;
+
+DECLARE 
+BEGIN
+datosclientes(1);
+
+END;
+/

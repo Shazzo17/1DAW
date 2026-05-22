@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agencia>
+  <catalogo>
+    <juego id="j01" genero="Accion">
+      <nombre>Elden Ring</nombre>
+      <distribuidora>Bandai Namco</distribuidora>
+      <pago tipo="premium">59.90</pago>
+    </juego>
+    <juego id="j02" genero="MOBA">
+      <nombre>Dota 2</nombre>
+      <distribuidora>Valve</distribuidora>
+      <pago tipo="gratis">0</pago>
+    </juego>
+    <juego id="j03" genero="Shooter">
+      <nombre>Counter-Strike 2</nombre>
+      <distribuidora>Valve</distribuidora>
+      <pago tipo="gratis">0</pago>
+    </juego>
+    <juego id="j04" genero="Aventura">
+      <nombre>God of War</nombre>
+      <distribuidora>Sony Interactive</distribuidora>
+      <pago tipo="premium">49.50</pago>
+    </juego>
+  </catalogo>
+
+  <creadores>
+    <influencer id="inf01" red="YouTube">
+      <nick>AuronPlay</nick>
+      <audiencia>29000000</audiencia>
+      <tema>Entretenimiento</tema>
+    </influencer>
+    <influencer id="inf02" red="Twitch">
+      <nick>TheGrefg</nick>
+      <audiencia>11000000</audiencia>
+      <tema>Gaming</tema>
+    </influencer>
+    <influencer id="inf03" red="TikTok">
+      <nick>Rivers_gg</nick>
+      <audiencia>6000000</audiencia>
+      <tema>Variedad</tema>
+    </influencer>
+  </creadores>
+
+  <miembros>
+    <socio id="u100">
+      <alias>LoboSolitario</alias>
+      <estatus>Leyenda</estatus>
+      <puntos>95</puntos>
+    </socio>
+    <socio id="u101">
+      <alias>NovatoX</alias>
+      <estatus>Bronce</estatus>
+      <puntos>10</puntos>
+    </socio>
+    <socio id="u102">
+      <alias>GhostRider</alias>
+      <estatus>Plata</estatus>
+      <puntos>65</puntos>
+    </socio>
+  </miembros>
+
+  <competiciones>
+    <evento id="ev1" estado="finalizado">
+      <titulo>ESL One</titulo>
+      <prize_pool moneda="USD">1000000</prize_pool>
+    </evento>
+    <evento id="ev2" estado="proximamente">
+      <titulo>The International</titulo>
+      <prize_pool moneda="USD">18000000</prize_pool>
+    </evento>
+  </competiciones>
+</agencia>

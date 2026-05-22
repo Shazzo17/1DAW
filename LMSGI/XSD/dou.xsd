@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="agenda">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="ficha">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombre" type="xs:string"></xs:element>
+                        <xs:element name="apellido1" type="xs:string"></xs:element>
+                        <xs:element name="apellido2" type="xs:string"></xs:element>
+                        <xs:element name="tel_nacionales">
+                            <xs:complexType>
+                                <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                                    <xs:element name="tel_nacional" type="xs:positiveInteger">
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="tel_internacionales" >
+                            <xs:complexType>
+                                <xs:sequence maxOccurs="unbounded">
+                                    <xs:element name="tel_internacional">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:pattern value="\+\d{2} \d{9}"></xs:pattern>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="dir_emails">
+                            <xs:complexType>
+                                <xs:sequence maxOccurs="unbounded">
+                                    <xs:element name="email" type="xs:string"></xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="direcciones_postal">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="direccion">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="calle" type="xs:string"></xs:element>
+                                                <xs:element name="num" type="xs:positiveInteger"></xs:element>
+                                                <xs:element name="piso">
+                                                    <xs:complexType>
+                                                        <xs:attribute name="letra" type="xs:string"></xs:attribute>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="ciudad" type="xs:string"></xs:element>
+                                                <xs:element name="pais" type="xs:string"></xs:element>
+                                            </xs:sequence>
+                                            <xs:attribute name="CP" type="xs:positiveInteger" use="required"></xs:attribute>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                        <xs:attribute name="categoria" type="xs:string">
+                        </xs:attribute>
+                        <xs:attribute name="zona" type="xs:string"></xs:attribute>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>

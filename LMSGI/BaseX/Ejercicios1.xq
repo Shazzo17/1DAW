@@ -1,0 +1,9 @@
+/cineonline/empresa/sede/localidad
+/cineonline/empresa/sede/localidad/text()
+/cineonline/empresa/telefono/@numero/data()
+/cineonline/empresa/responsable
+/cineonline/empresa/responsable/telefono_responsable/text()
+/cineonline/peliculas/pelicula/titulo/text()
+/cineonline/peliculas/pelicula/actores/actor/text()
+/cineonline/empresa/@CIF/data()
+/cineonline/peliculas/pelicula/año/text()

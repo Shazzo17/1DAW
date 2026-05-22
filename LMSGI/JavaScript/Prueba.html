@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba</title>
+</head>
+
+<body>
+    <h1>Hola,esta es una prueba de javascript</h1>
+    <script>
+        const a = "comillas simples";
+        const b = "comillas dobles";
+        const c = `backtick (template literal)`;
+        // Template literals: interpolación de expresiones
+        const nombre = "María";
+        const edad = 20;
+        console.log(`Me llamo ${nombre} y tengo ${edad} años.`);
+        // Cualquier expresión JS válida puede ir dentro de ${}
+        console.log(`El doble de mi edad es ${edad * 2}.`);
+        console.log(`¿Es mayor de edad? ${edad >= 18 ? "Sí" : "No"}`);
+        // Strings multilínea con template literals
+        const html = `
+<div class="card">
+<h2>${nombre}</h2>
+<p>Edad: ${edad}</p>
+</div>
+`;
+
+        // Propiedades y métodos de string
+        const texto = "JavaScript es genial";
+        console.log(texto.length); // 20 (longitud)
+        console.log(texto.toUpperCase()); // "JAVASCRIPT ES GENIAL"
+        console.log(texto.toLowerCase()); // "javascript es genial"
+        console.log(texto.includes("es")); // true
+        console.log(texto.indexOf("es")); // 11 (posición)
+        console.log(texto.slice(0, 10)); // "JavaScript"
+        console.log(texto.split(" ")); // ["JavaScript", "es", "genial"]
+        console.log(texto.replace("genial", "fantástico")); // ...
+        console.log(" hola ".trim()); // "hola" (sin espacios)
+    </script>
+</body>
+
+</html>

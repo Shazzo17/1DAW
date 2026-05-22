@@ -1,0 +1,16 @@
+EJ-1
+
+//videojuego/titulo/text() | //videojuego/desarrolladora
+
+EJ-2
+//videojuego[precio>0]/titulo/text()
+//videojuego[precio/@gratis="no"]/titulo/text()
+
+EJ-3
+//streamer[1] | //torneo[last()]
+
+EJ-4
+//usuario[rango="Elite" or nivel>50]/apodo/text()
+
+EJ-5
+//streamer[seguidores > avg(//seguidores)]/seguidores ! (. div 1000000)

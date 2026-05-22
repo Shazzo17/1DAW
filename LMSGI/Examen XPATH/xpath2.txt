@@ -1,0 +1,16 @@
+EJ-1
+//juego/nombre/text() | //juego/distribuidora
+
+EJ-2
+//juego[pago>0]/nombre/text()
+//juego[pago/@tipo="premium"]/nombre/text()
+
+EJ-3
+//influencer[1] | //evento[last()]
+
+EJ-4
+//socio[estatus="Leyenda" or puntos>60]/alias/text()
+
+EJ-5
+//influencer[avg(//audiencia)<audiencia]/audiencia div 1000000
+//influencer[avg(//audiencia)<audiencia]/audiencia ! (. div 1000000)

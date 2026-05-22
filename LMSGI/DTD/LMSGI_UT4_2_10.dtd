@@ -1,0 +1,35 @@
+<!ELEMENT prision (director,direccion,funcionarios,reclusos,celdas)*> 
+<!ATTLIST prision
+          codigoprision ID #REQUIRED
+          fechap CDATA #REQUIRED
+          capacidad CDATA #REQUIRED          
+          >         
+<!ELEMENT director (nombred,apellidosd,fechan)>
+<!ELEMENT nombred (#PCDATA)> 
+<!ELEMENT apellidosd (#PCDATA)> 
+<!ELEMENT fechan (#PCDATA)> 
+<!ELEMENT direccion (nombrevia,numero,CP,localidad,provincia)>
+<!ELEMENT nombrevia (#PCDATA)> 
+<!ELEMENT numero (#PCDATA)> 
+<!ELEMENT CP (#PCDATA)> 
+<!ELEMENT localidad (#PCDATA)> 
+<!ELEMENT provincia (#PCDATA)> 
+<!ELEMENT funcionarios (funcionario)+>
+<!ELEMENT funcionario (fechainc,nombref)>
+<!ATTLIST funcionario puesto (carcelero|administrativo|servicios) "carcelero">
+<!ELEMENT fechainc (#PCDATA)> 
+<!ELEMENT nombref (#PCDATA)> 
+<!ELEMENT reclusos (recluso)*>
+<!ELEMENT recluso (fechaing,nombrer,condena)>
+<!ATTLIST recluso
+          numeror ID #REQUIRED
+          celda IDREF #REQUIRED
+          peligrosidad (NP|PP|P|MP) #REQUIRED>
+<!ELEMENT fechaing (#PCDATA)> 
+<!ELEMENT nombrer (#PCDATA)> 
+<!ELEMENT condena (#PCDATA)> 
+<!ELEMENT celdas (celda)+>
+<!ELEMENT celda (pabellon,capacidad)>
+<!ATTLIST celda numcelda ID #REQUIRED>
+<!ELEMENT pabellon (#PCDATA)> 
+<!ELEMENT capacidad (#PCDATA)> 

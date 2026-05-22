@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plataforma>
+  <videojuegos>
+    <videojuego id="v01" categoria="MOBA">
+      <titulo>League of Legends</titulo>
+      <desarrolladora>Riot Games</desarrolladora>
+      <precio gratis="si">0</precio>
+    </videojuego>
+    <videojuego id="v02" categoria="RPG">
+      <titulo>Cyberpunk 2077</titulo>
+      <desarrolladora>CD Projekt Red</desarrolladora>
+      <precio gratis="no">59.99</precio>
+    </videojuego>
+    <videojuego id="v03" categoria="FPS">
+      <titulo>Valorant</titulo>
+      <desarrolladora>Riot Games</desarrolladora>
+      <precio gratis="si">0</precio>
+    </videojuego>
+    <videojuego id="v04" categoria="Deportes">
+      <titulo>EA Sports FC 25</titulo>
+      <desarrolladora>Electronic Arts</desarrolladora>
+      <precio gratis="no">69.99</precio>
+    </videojuego>
+  </videojuegos>
+
+  <streamers>
+    <streamer id="s01" plataforma="Twitch" verificado="si">
+      <nombre>Ibai Llanos</nombre>
+      <seguidores>15600000</seguidores>
+      <especialidad>Variedad</especialidad>
+      <pais>España</pais>
+    </streamer>
+    <streamer id="s02" plataforma="YouTube" verificado="si">
+      <nombre>ElRubius</nombre>
+      <seguidores>12000000</seguidores>
+      <especialidad>Gaming</especialidad>
+      <pais>Andorra</pais>
+    </streamer>
+    <streamer id="s03" plataforma="Twitch" verificado="no">
+      <nombre>StreamerPrueba</nombre>
+      <seguidores>500000</seguidores>
+      <especialidad>Just Chatting</especialidad>
+      <pais>México</pais>
+    </streamer>
+  </streamers>
+
+  <usuarios>
+    <usuario id="u01">
+      <apodo>MarcianoGamer</apodo>
+      <rango>Elite</rango>
+      <nivel>60</nivel>
+    </usuario>
+    <usuario id="u02">
+      <apodo>Novato123</apodo>
+      <rango>Bronce</rango>
+      <nivel>12</nivel>
+    </usuario>
+    <usuario id="u03">
+      <apodo>ShadowHunter</apodo>
+      <rango>Master</rango>
+      <nivel>85</nivel>
+    </usuario>
+  </usuarios>
+
+  <torneos>
+    <torneo id="t01" juego_ref="v01" estado="cerrado">
+      <nombre>Worlds 2025</nombre>
+      <premio moneda="USD">2000000</premio>
+    </torneo>
+    <torneo id="t02" juego_ref="v03" estado="activo">
+      <nombre>Masters Madrid</nombre>
+      <premio moneda="EUR">500000</premio>
+      <participantes>
+        <equipo ranking="1">Heretics</equipo>
+        <equipo ranking="2">Fnatic</equipo>
+      </participantes>
+    </torneo>
+  </torneos>
+</plataforma>

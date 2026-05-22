@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE prision SYSTEM "LMSGI_UT4_2_10.dtd">
+
+<prision codigoprision="NIGG" fechap="12-08-15" capacidad="87134">
+    <director>
+        <nombred>NIGG</nombred>
+        <apellidosd>Nigg</apellidosd>
+        <fechan>11-9-2001</fechan>
+    </director>
+    <direccion>
+        <nombrevia>Calle epstein</nombrevia>
+        <numero>5</numero>
+        <CP>30820</CP>
+        <localidad>Nigg</localidad>
+        <provincia>dou</provincia>
+    </direccion>
+    <funcionarios>
+        <funcionario puesto="administrativo">
+            <fechainc>10-11-2006</fechainc>
+            <nombref>Breathe</nombref>
+        </funcionario>
+    </funcionarios>
+    <reclusos>
+        <recluso numeror="12412" celda="1" peligrosidad="MP">
+            <fechaing>22-10-2022</fechaing>
+            <nombrer>George</nombrer>
+            <condena>102</condena>
+        </recluso>
+    </reclusos>
+    <celdas>
+        <celda numcelda="12313">
+            <pabellon>nigger</pabellon>
+            <capacidad>76431</capacidad>
+        </celda>
+    </celdas>
+</prision>
