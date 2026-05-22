@@ -113,4 +113,84 @@ public class Servicios {
         }
         return listaProfesoresFiltrados;
     }
+
+    /**
+     * Reto 1:
+     *
+     * Realizar una función que determine si un alumno en concreto recibe clases
+     * de un profesor en concreto.
+     */
+    public boolean seConocen(Alumnos alumnoDado, Profesores profesorDado, ArrayList<DarClase> listaDarClase) {
+        boolean coinciden = false;
+        Iterator<DarClase> iteradorDarClase = listaDarClase.iterator();
+        DarClase fijarDarClase;
+        while (iteradorDarClase.hasNext() && !coinciden) {
+            fijarDarClase = iteradorDarClase.next();
+            if (alumnoDado.getDni().compareTo(fijarDarClase.getDniAlumno()) == 0 && profesorDado.getDni().compareTo(fijarDarClase.getDniProfesor()) == 0) {
+                coinciden = true;
+            }
+        }
+        return coinciden;
+    }
+
+    /**
+     * Reto 2:
+     *
+     * Realizar una función que determine qué alumnos de la academia no están
+     * matriculados en ninguna clase.
+     */
+    public ArrayList<Alumnos> alumnosSinClase(ArrayList<DarClase> listaDarClase, ArrayList<Alumnos> listaAlumnos) {
+        boolean encontrado;
+        ArrayList<Alumnos> alumnosFiltrados = new ArrayList<>();
+        Iterator<DarClase> iteradorDarClase;
+        Iterator<Alumnos> iteradorAlumnos = listaAlumnos.iterator();
+        DarClase fijarDarClase;
+        Alumnos fijarAlumnos;
+        while (iteradorAlumnos.hasNext()) {
+            encontrado = false;
+            fijarAlumnos = iteradorAlumnos.next();
+            iteradorDarClase = listaDarClase.iterator();
+            while (iteradorDarClase.hasNext() && !encontrado) {
+                fijarDarClase = iteradorDarClase.next();
+                if (fijarAlumnos.getDni().compareTo(fijarDarClase.getDniAlumno()) == 0) {
+                    encontrado = true;
+                }
+            }
+            if (!encontrado) {
+                alumnosFiltrados.add(fijarAlumnos);
+            }
+        }
+        return alumnosFiltrados;
+    }
+
+    /**
+     * Reto 3:
+     *
+     * Realizar una función que determine y devuelva cuál es el profesor que
+     * tiene la mayor cantidad de alumnos totales asignados en la academia.
+     */
+    public Profesores profesorConMasAlumnos(ArrayList<Profesores> listaProfesores, ArrayList<DarClase> listaDarClase) {
+        int cantidadMaxima = 0;
+        int cantidadAlumnos;
+        Iterator<DarClase> iteradorDarClase;
+        Iterator<Profesores> iteradorProfesores = listaProfesores.iterator();
+        DarClase fijarDarClase;
+        Profesores fijarProfesor, profesorFiltrado = null;
+        while (iteradorProfesores.hasNext()) {
+            cantidadAlumnos = 0;
+            fijarProfesor = iteradorProfesores.next();
+            iteradorDarClase = listaDarClase.iterator();
+            while (iteradorDarClase.hasNext()) {
+                fijarDarClase = iteradorDarClase.next();
+                if (fijarProfesor.getDni().compareTo(fijarDarClase.getDniProfesor()) == 0) {
+                    cantidadAlumnos++;
+                }
+            }
+            if (cantidadMaxima < cantidadAlumnos) {
+                cantidadMaxima = cantidadAlumnos;
+                profesorFiltrado = fijarProfesor;
+            }
+        }
+        return profesorFiltrado;
+    }
 }
