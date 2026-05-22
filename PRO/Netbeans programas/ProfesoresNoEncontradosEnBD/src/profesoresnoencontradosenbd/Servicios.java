@@ -4,14 +4,9 @@
  */
 package profesoresnoencontradosenbd;
 
-import com.mysql.cj.jdbc.ClientPreparedStatement;
 import java.io.BufferedReader;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 /**
  *
@@ -63,6 +58,8 @@ public class Servicios {
         return listaProfesoresFiltrados;
     }
 
+    //Tengo una tabla, con la palabra y tres conceptos,y me dicen que tengo un fichero con unas determinadas palabras, yo hare que si la palabra no existe se la metemos y si existe no haremos nada.
+    //En este problema suponemos que el concepto de las palabras es variable
     public void Diccionario(Connection con, BufferedReader bf) {
         String[] ar;
         String palabraArchivo;
@@ -70,7 +67,7 @@ public class Servicios {
         PreparedStatement ps;
         PreparedStatement pr;
         String sql = "SELECT palabra FROM TablaDiccionario WHERE palabra = ?";
-        String insert = "INSERT INTO TablaDiccionario (palabra, concepto1, concepto2, concepto3) VALUES (?, ?, ?, ?)";
+        String insert = "INSERT INTO TablaDiccionario (palabra, concepto1, concepto2, concepto3) VALUES (?,?,?,?)";
         String linea;
 
         try {
@@ -94,4 +91,36 @@ public class Servicios {
             System.err.println("Se ha encontrado el error " + e.getMessage());
         }
     }
+
+    //Me dan un fichero de personas con los campos dni, nombre,apellido y edad y me dicen que ordene ese fichero por nombres.
+    public ResultSet ordenarFicheroPorNombres(Connection con, BufferedReader bfArchivoDado) {
+        String ar[];
+        String linea;
+        String select = "SELECT * FROM Personas ORDER BY NOMBRE";
+        String insert = "INSERT INTO Personas (dni, nombre, apellido, edad) VALUES (?, ?, ?, ?)";
+        PreparedStatement psInsert;
+        PreparedStatement psSelect;
+        ResultSet rsResultado = null;
+
+        try {
+            psInsert = con.prepareStatement(insert);
+            psSelect = con.prepareStatement(select);
+
+            while ((linea = bfArchivoDado.readLine()) != null) {
+                ar = linea.split(",");
+                psInsert.setString(1, ar[0]);
+                psInsert.setString(2, ar[1]);
+                psInsert.setString(3, ar[2]);
+                psInsert.setString(4, ar[3]);
+                psInsert.executeUpdate();
+            }
+            rsResultado = psSelect.executeQuery();
+        } catch (Exception e) {
+            System.err.println("Se ha encontrado el error:" + e.getMessage());
+        }
+        return rsResultado;
+    }
+
+    //Dado un fichero disperso, decidme la cantidad de lineas que tiene ese fichero.
+
 }
