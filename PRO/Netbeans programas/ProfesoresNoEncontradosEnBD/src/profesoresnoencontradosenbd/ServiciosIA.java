@@ -92,6 +92,38 @@ public class ServiciosIA {
     }
 
     // 3.- Me dan un fichero con los campos matricula, marca y modelo de coches. Me dicen que guarde todos esos coches en la base de datos y luego devuelva un ResultSet con todos los coches de la tabla ordenados alfabéticamente por marca.
+    public ResultSet cochesOrdenadosPorMarca (Connection con, BufferedReader bfArchivo) {
+        ResultSet rsResultado;
+        String ar[];
+        String linea;
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //EJERCICIO HECHO POR IA
     // 3.- Me dan un fichero con los campos matricula, marca y modelo de coches. Me dicen que guarde todos esos coches en la base de datos y luego devuelva un ResultSet con todos los coches de la tabla ordenados alfabéticamente por marca.
     public ResultSet registrarYOrdenarCoches(Connection con, BufferedReader bf) {
         String ar[];
